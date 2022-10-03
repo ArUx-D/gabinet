@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Visits(){
   return (
     <div>
-      <p>This is the Contact Page</p>
+      <p>This is the Visit Page</p>
       <Link to="/">Powrót na stronę główną</Link>
     </div>
   )

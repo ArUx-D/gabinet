@@ -1,8 +1,5 @@
 import React from 'react';
-import Add from './client/Add'
-import All from './client/All'
-import Error from './Error'
-import '../style.css'
+import '../../style.css'
 
 function Clients(){
   let activeClassName = "nav-active";

@@ -5,23 +5,22 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import './style.css';
 import Office from './pages/Office';
-import Clients from './pages/Clients';
-import Visits from './pages/Visits';
 import Error from './pages/Error';
 import Add from './pages/client/Add';
 import All from './pages/client/All';
 function App() {
-  let activeClassName = "nav-active";
     return (
       <BrowserRouter>
+      <div>Gabinet</div>
+      <div style={{display:'flex'}}>
     <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
       <MenuItem href="/clients/add" >Nowy klient</MenuItem>
       <MenuItem href="/clients/all">Lista klientów</MenuItem>
       <MenuItem>Close Window</MenuItem>
     </Menu>    
-    <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
-      <MenuItem href="/clients/add" >Nowy klient</MenuItem>
-      <MenuItem href="/clients/all">Lista klientów</MenuItem>
+    <Menu menuButton={<MenuButton>Wizyty</MenuButton>}>
+      <MenuItem href="/visits/add" >Nowa wizyta</MenuItem>
+      <MenuItem href="/visits/all">Lista wizyt</MenuItem>
       <MenuItem>Close Window</MenuItem>
     </Menu>    
     <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
@@ -29,10 +28,10 @@ function App() {
       <MenuItem href="/clients/all">Lista klientów</MenuItem>
       <MenuItem>Close Window</MenuItem>
     </Menu>
+    <a href="/"><button>Strona główna</button></a>
+    </div>
       <Routes>
         <Route path="/" element={<Office/>}/>
-        <Route path="clients" element={<Clients/>}/>
-        <Route path="visits" element={<Visits/>}/>
         <Route path="*" element={<Error/>}/>
         <Route path="clients/add" element={<Add/>}/>
         <Route path="clients/all" element={<All/>}/>
