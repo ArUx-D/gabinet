@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 function All(){
+  const [clients, setClients] = useState([]);
+  useEffect(() => {
+    fetchClients();
+  }, []);
+  const fetchClients = () => {
+    axios
+      .get('http://localhost:8080/client/all')
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
   return (
     <div>
-      <p>This is the All Page</p>
+      <h1>Wszyscy klienci</h1>
     </div>
-  )
-}
+  );
+};
 
 export default All;
