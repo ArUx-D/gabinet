@@ -8,6 +8,7 @@ import Office from './pages/Office';
 import Error from './pages/Error';
 import Add from './pages/client/Add';
 import All from './pages/client/All';
+import Profile from './pages/client/Profile';
 function App() {
     return (
       <BrowserRouter>
@@ -35,6 +36,7 @@ function App() {
         <Route path="*" element={<Error/>}/>
         <Route path="clients/add" element={<Add/>}/>
         <Route path="clients/all" element={<All/>}/>
+        <Route path="clients/profile/:id" element={<Profile/>}/>
       </Routes>
       </BrowserRouter>
     );

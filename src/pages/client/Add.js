@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import axios from 'axios';
 
 function Add(){
-  const [firstName , setFirstName] = useState('Ala');
-  const [lastName , setLastName] = useState('Ma');
-  const [phoneNumber , setPhoneNumber] = useState('123456789');
-  const [dateOfBirth , setDateOfBirth] = useState('2020-01-01');
+  const [firstName , setFirstName] = useState('');
+  const [lastName , setLastName] = useState('');
+  const [phoneNumber , setPhoneNumber] = useState('');
+  const [dateOfBirth , setDateOfBirth] = useState('');
 
   const handleFirstNameChange =(e)=>{
     setFirstName(e.target.value);

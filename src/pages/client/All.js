@@ -11,6 +11,7 @@ function All(){
       .get('http://localhost:8080/client/all')
       .then((res) => {
         console.log(res);
+        setClients(res.data)
       })
       .catch((err) => {
         console.log(err);
@@ -19,6 +20,13 @@ function All(){
   return (
     <div>
       <h1>Wszyscy klienci</h1>
+      <div className='client-container'>
+        {clients.map((client)=>(
+          <div className='card'>
+            <div>{client.id}. {client.firstName} {client.lastName} {client.dateOfBirth} </div>
+            </div>
+        ))}
+      </div>
     </div>
   );
 };
