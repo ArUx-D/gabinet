@@ -23,7 +23,7 @@ function All(){
       <div className='client-container'>
         {clients.map((client)=>(
           <div className='card'>
-            <div>{client.id}. {client.firstName} {client.lastName} {client.dateOfBirth} </div>
+            <div>{client.id}. {client.firstName} {client.lastName} {client.dateOfBirth} <a href={'/client/'+client.id}><button>Przejdź do klienta</button></a></div>
             </div>
         ))}
       </div>
