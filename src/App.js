@@ -6,9 +6,11 @@ import '@szhsin/react-menu/dist/transitions/slide.css';
 import './style.css';
 import Office from './pages/Office';
 import Error from './pages/Error';
-import Add from './pages/client/Add';
+import AddC from './pages/client/Add';
 import All from './pages/client/All';
 import Client from './pages/client/Client';
+import AddV from './pages/visit/Add';
+
 function App() {
     return (
       <BrowserRouter>
@@ -31,9 +33,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Office/>}/>
         <Route path="*" element={<Error/>}/>
-        <Route path="clients/add" element={<Add/>}/>
+        <Route path="clients/add" element={<AddC/>}/>
         <Route path="clients/all" element={<All/>}/>
         <Route path="client/:id" element={<Client/>}/>
+        <Route path="visits/add" element={<AddV/>}/>
       </Routes>
       </BrowserRouter>
     );

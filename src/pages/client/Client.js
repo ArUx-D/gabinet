@@ -22,6 +22,7 @@ function Client(){
      <div>{client.firstName} {client.lastName}</div>
      <div>{client.dateOfBirth}</div>
      <div>{client.phoneNumber}</div>
+     <h3>Wizyty</h3>
      </div>
     );
   };
