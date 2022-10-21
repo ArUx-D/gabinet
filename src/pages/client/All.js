@@ -10,7 +10,7 @@ function All(){
     axios
       .get('http://localhost:8080/client/all')
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setClients(res.data)
       })
       .catch((err) => {

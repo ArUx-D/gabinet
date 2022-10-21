@@ -1,10 +1,27 @@
-import React, {useState} from 'react';
 import axios from 'axios';
+import React, {useState, useEffect} from "react";
+import { useParams } from "react-router-dom";;
+
 
 function Add(){
   const [date , setDate] = useState('');
   const [note , setNote] = useState('');
-  const [client , setClient] = useState('');
+
+  const [client, setClient] = useState([]);
+    const {id} = useParams()
+    useEffect(() => {
+      fetchClient();
+    }, []);
+  const fetchClient = () => {
+    axios
+      .get('http://localhost:8080/client/'+id)
+      .then((res) => {
+        setClient(res.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
 
   const handleDateChange =(e)=>{
     setDate(e.target.value);
@@ -12,15 +29,14 @@ function Add(){
   const handleNoteChange =(e)=>{
     setNote(e.target.value);
   }
-  const handleClientChange =(e)=>{
-    setClient(e.target.value);
-  }
+
   const handleSubmit=(e)=>{
+    alert('Dodano wizytę');
       e.preventDefault();
       const body = {
         date: date,
         note: note,
-        client: client,
+        clientId: client.id,
       };
       console.log(body);
       let config = {
@@ -45,7 +61,7 @@ return (
     <label>
         Klient:
       </label><br/>
-      <input name='client' type="client" value={client} required onChange={(e) => {handleClientChange(e)}} /><br/>
+      <div>{client.firstName} {client.lastName}</div>
       <label >
         Data:
       </label><br/>

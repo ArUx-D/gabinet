@@ -17,15 +17,14 @@ function App() {
       <div>Gabinet</div>
       <div style={{display:'flex'}}>
     <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
-      <MenuItem href="/clients/add" >Nowy klient</MenuItem>
+      <MenuItem href="/clients/add">Nowy klient</MenuItem>
       <MenuItem href="/clients/all">Lista klientów</MenuItem>
     </Menu>    
     <Menu menuButton={<MenuButton>Wizyty</MenuButton>}>
-      <MenuItem href="/visits/add" >Nowa wizyta</MenuItem>
-      <MenuItem href="/visits/all">Lista wizyt</MenuItem>
+      <MenuItem href="/client/:id/visits/add" >Nowa wizyta</MenuItem>
     </Menu>    
     <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
-      <MenuItem href="/clients/add" >Nowy klient</MenuItem>
+      <MenuItem href="/clients/add">Nowy klient</MenuItem>
       <MenuItem href="/clients/all">Lista klientów</MenuItem>
     </Menu>
     <a href="/"><button>Strona główna</button></a>
@@ -36,7 +35,7 @@ function App() {
         <Route path="clients/add" element={<AddC/>}/>
         <Route path="clients/all" element={<All/>}/>
         <Route path="client/:id" element={<Client/>}/>
-        <Route path="visits/add" element={<AddV/>}/>
+        <Route path="client/:id/visits/add" element={<AddV/>}/>
       </Routes>
       </BrowserRouter>
     );
