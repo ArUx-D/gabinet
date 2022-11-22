@@ -10,6 +10,8 @@ import AddC from './pages/client/Add';
 import All from './pages/client/All';
 import Client from './pages/client/Client';
 import AddV from './pages/visit/Add';
+import Login from './pages/security/Login';
+import Registration from './pages/security/Registration';
 
 function App() {
     return (
@@ -23,11 +25,9 @@ function App() {
     <Menu menuButton={<MenuButton>Wizyty</MenuButton>}>
       <MenuItem href="/client/:id/visits/add" >Nowa wizyta</MenuItem>
     </Menu>    
-    <Menu menuButton={<MenuButton>Klienci</MenuButton>}>
-      <MenuItem href="/clients/add">Nowy klient</MenuItem>
-      <MenuItem href="/clients/all">Lista klientów</MenuItem>
-    </Menu>
     <a href="/"><button>Strona główna</button></a>
+    <a href="/login"><button>Zaloguj</button></a>
+    <a href="/register"><button>Zarejestruj</button></a>
     </div>
       <Routes>
         <Route path="/" element={<Office/>}/>
@@ -36,6 +36,8 @@ function App() {
         <Route path="clients/all" element={<All/>}/>
         <Route path="client/:id" element={<Client/>}/>
         <Route path="client/:id/visits/add" element={<AddV/>}/>
+        <Route path="login" element={<Login/>}/>
+        <Route path="register" element={<Registration/>}/>
       </Routes>
       </BrowserRouter>
     );
